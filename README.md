@@ -12,6 +12,10 @@ Can you help Ditto?
 
 ### My project Idea
 
+![INDEX PAGE](img/background.gif)
+
+![THIS IS THE GAME DESCRIPTION](img/game-description.gif)
+
 
 
 
