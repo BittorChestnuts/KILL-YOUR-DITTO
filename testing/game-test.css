@@ -19,6 +19,19 @@
   background-color: rgb(171, 165, 49);
 }
 
+.ditto-name {
+  height: 10vh;
+  width: 90vw;
+  background-color: rgb(171, 165, 49);
+  align-items: center;
+}
+
+.ditto-health {
+  height: 10vh;
+  width: 90vw;
+  background-color: rgb(171, 165, 49);
+  align-items: center;
+}
 .game-board {
   display: flex;
   justify-content: center;
@@ -39,7 +52,9 @@
 }
 
 .footer {
+  display: ;
   height: 10vh;
   width: 90vw;
   background-color: rgb(71, 94, 246);
+  align-items: center;
 }
