@@ -24,8 +24,6 @@ Can you help Ditto to survive on this fucking world?
 
 
 
-
-
 #### HTML Backlog
 
 index.html
