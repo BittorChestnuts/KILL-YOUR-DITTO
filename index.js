@@ -12,6 +12,7 @@ const gameBoardElement = document.querySelector(".game-board");
 // init Ditto
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
+
 let positionYDitto = 300;
 let positionXDitto = 50;
 let speedDitto = 10;
@@ -55,21 +56,35 @@ function moveDitto(event) {
 
     ditto.style.top = `${positionYDitto}px`;
     ditto.style.left = `${positionXDitto}px`;
+
+    //check if ditto is eating
+
+    dittoIsEating();
+
 }
 
 // playing with Ditto movement
 document.addEventListener("keydown", moveDitto);
 
 // checking if DITTO is EATING FAST FOOD!
+// if Ditto is eating : 
+// 1- remove the FastFood Element from the GameBoard
+// 2 - substract health from Ditto
+// 3 - increase the size of Ditto 20%
+// 4 - decrease the Ditto Speed 10
+
 
 function dittoIsEating() {
-    if (0 < positionXFastFood1 + fastFood1.clientWidth &&
-        0 + ditto.clientWidth > positionXFastFood1 &&
-        positionYDitto < positionYFastFood1 + fastFood1.clientHeight &&
-        positionYDitto + ditto.clientHeight > positionYFastFood1) {
-        dittoHealth-- 
+    if (
+        positionXDitto + dittoWidth > positionXFastFood1 + fastFood1.clientWidth
+    ) {
+        console.log(positionXDitto);
+        console.log(positionXFastFood1);
+        console.log("Ditto is Eating");
     }
-    console.log("Ditto is Eating");
 }
+
+
+
 
 
