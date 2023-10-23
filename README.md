@@ -8,7 +8,13 @@ As a result, his height and size have skyrocketed, and the doctor has warned tha
 
 The goal is to extend his lifespan by avoiding this type of food and keeping track of the time you've added to his life.
 
-Can you help Ditto?
+In the start game Ditto has 3 lifes (3 Ditto)
+Each time eat fast food, his life decreases 1 Ditto.
+
+The game is over when Ditto eat 3 fast foods and shows how many time you extended his life.
+
+
+Can you help Ditto to survive on this fucking world?
 
 ### My project Idea
 
