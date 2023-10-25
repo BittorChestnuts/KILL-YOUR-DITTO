@@ -34,7 +34,6 @@ function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
     document.querySelector(".dittoLife").textContent = `Ditto Health: ${dittoHealth}`
     document.querySelector(".score").textContent = `Your SCORE: ${fastFoodPassed}`
-    console.log(fastFoodPassed);
     document.querySelector(".dittoName").textContent = `Your name : ${chooseYourName}`
     for (let i = 0; i < fastFoodArray.length; i++) {
         const fastFood = fastFoodArray[i];
@@ -51,9 +50,7 @@ function dittoIsEating() {
             // fastFoodPassed = fastFoodArray.length
             fastFoodArray.splice(i, 1); // Remove the fast food from the array
             fastFood.element.remove() // Remove from the screen the fastFood
-            console.log(dittoHealth); // Show the Health
             document.querySelector(".dittoLife").textContent = `Ditto Health: ${dittoHealth}`
-            console.log(fastFoodArray.length); // show the Score
             ditto.style.width = ditto.clientWidth + 5 + "px"; // increase Ditto width
             ditto.style.height = ditto.clientHeight + 5 + "px"; // increase Ditto Height
         }
