@@ -91,7 +91,6 @@ body {
     margin-top: 10px;
   }
 
-
 .dittoName {
     font-size: 24px;
     font-weight: bold;
@@ -100,3 +99,10 @@ body {
     margin-top: 10px;
   }
   
+  .gameOver {
+    font-size: 90px;
+    font-weight: bold;
+    color: #e80606; 
+    text-align: center;
+    margin-top: 10px;
+  }

@@ -29,6 +29,8 @@ function moveDitto(event) {
 document.addEventListener("keydown", moveDitto);
 
 
+
+
 // Check the COLLISIONS
 function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
@@ -47,10 +49,8 @@ function dittoIsEating() {
         ) {
             speedDitto--;
             dittoHealth--;
-            // fastFoodPassed = fastFoodArray.length
             fastFoodArray.splice(i, 1); // Remove the fast food from the array
             fastFood.element.remove() // Remove from the screen the fastFood
-            document.querySelector(".dittoLife").textContent = `Ditto Health: ${dittoHealth}`
             ditto.style.width = ditto.clientWidth + 5 + "px"; // increase Ditto width
             ditto.style.height = ditto.clientHeight + 5 + "px"; // increase Ditto Height
         }

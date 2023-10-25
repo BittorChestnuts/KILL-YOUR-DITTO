@@ -11,22 +11,6 @@ const ditto = document.querySelector(".ditto");
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
 
-// INIT THE GAME 
-/* class game {
-    constructor(dittoHealth, fastFoodPassed, gameIsOver) {
-        //this.dittoHealth = 10,
-            this.fastFoodPassed = 0,
-            this.gameOver = false
-    }
-    newGame() {
-        return this.dittoHealth, this.fastFoodPassed
-    }
-    gameIsOver() {
-        console.log("GAME OVER");
-        return this.gameIsOver = true
-    }
-} */
-
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
 let positionXDitto = 80;
@@ -47,11 +31,9 @@ score.textContent = `Score: ${fastFoodPassed}`
 //init fastFoodArray , direction X and Y possible directions 
 const fastFoodArray = []
 let directionX = "left"
-
 const possibleDirections = ["up", "down"]
 function getRandomDirection() {
     const randomIndex = Math.floor(Math.random() * possibleDirections.length);
-    
     return possibleDirections[randomIndex]
 }
 
@@ -137,6 +119,17 @@ function moveFastFood() {
     })
 }
 
+function GameOver(){
+        if (dittoHealth === 0){
+                       const gameIsOver = document.createElement("h1")
+                       gameIsOver.classList.add("gameOver")
+                       gameIsOver.textContent = "GAME OVER!"
+                       document.body.appendChild(gameIsOver)
+                       cancelAnimationFrame(animationId)
+                   } 
+    }
+
+
 // Creating the Game Animation Frame
 let animationId;
 function gameAnimationFrame() {
@@ -154,6 +147,7 @@ function gameAnimationFrame() {
         else if (frames % 100 === 0) {
             createFastFood3()
         }
+        GameOver()
     }
 }
 gameAnimationFrame();
