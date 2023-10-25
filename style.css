@@ -13,7 +13,7 @@ body {
     background-color: rgb(129, 124, 124);
 }
 
-.nav{
+.game-info-banner{
     display: flex;
     width: 80vw;
     padding: 20px;
@@ -51,6 +51,7 @@ body {
     top: 100px;
 }
 
+
 .fast-food-2 {
     position: absolute;
     width: 50px;
@@ -72,3 +73,31 @@ body {
     right: -50px;
     top: 550px;
 }
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; 
+    text-align: center;
+    margin-top: 10px;
+
+  }
+
+
+.dittoLife {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; 
+    text-align: center;
+    margin-top: 10px;
+  }
+
+
+.dittoName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000; 
+    text-align: center;
+    margin-top: 10px;
+  }
+  

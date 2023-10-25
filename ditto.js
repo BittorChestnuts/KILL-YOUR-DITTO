@@ -22,59 +22,37 @@ function moveDitto(event) {
     ditto.style.top = `${positionYDitto}px`;
     ditto.style.left = `${positionXDitto}px`;
     //check if ditto is eating
-    dittoIsEating();
+    //dittoIsEating();
 }
 
 // detecting Ditto movement
 document.addEventListener("keydown", moveDitto);
 
+
 // Check the COLLISIONS
 function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
-    const positionFastFood1 = fastFood1.getBoundingClientRect();
-    const positionFastFood2 = fastFood2.getBoundingClientRect();
-    const positionFastFood3 = fastFood3.getBoundingClientRect();
-    // Ditto is eating fastFood1
-    if (
-        dittoPosition.x < positionFastFood1.x + positionFastFood1.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood1.x &&
-        dittoPosition.y < positionFastFood1.y + positionFastFood1.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood1.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood1++
-        ditto.style.width = ditto.clientWidth + 5 + "px";
-        ditto.style.height = ditto.clientHeight + 5 + "px";
-    }
-    // Ditto is eating fastFood2
-    else if (
-        dittoPosition.x < positionFastFood2.x + positionFastFood2.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood2.x &&
-        dittoPosition.y < positionFastFood2.y + positionFastFood2.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood2.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood2++
-        ditto.style.width = ditto.clientWidth + 5 + "px";
-        ditto.style.height = ditto.clientHeight + 5 + "px";
-        console.log('Ditto is Eating FastFood2');
-    }
+    for (let i = 0; i < fastFoodArray.length; i++) {
+        const fastFood = fastFoodArray[i];
+        const positionFastFood = fastFood.element.getBoundingClientRect();
 
-    // Ditto is eating fastFood3
-    else if (
-        dittoPosition.x < positionFastFood3.x + positionFastFood3.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood3.x &&
-        dittoPosition.y < positionFastFood3.y + positionFastFood3.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood3.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood3++
-        ditto.style.width = ditto.clientWidth + 5 + "px";
-        ditto.style.height = ditto.clientHeight + 5 + "px";
-        console.log('Ditto is Eating FastFood3');
-    }
+        if (
+            dittoPosition.x < positionFastFood.x + positionFastFood.width &&
+            dittoPosition.x + dittoPosition.width > positionFastFood.x &&
+            dittoPosition.y < positionFastFood.y + positionFastFood.height &&
+            dittoPosition.y + dittoPosition.height > positionFastFood.y
+        ) {
+            speedDitto--;
+            dittoHealth--;
+            fastFoodPassed = fastFoodArray.length
+            fastFoodArray.splice(i, 1); // Remove the fast food from the array
+            fastFood.element.remove() // Remove from the screen the fastFood
+            console.log(fastFoodArray);
+            console.log(dittoHealth);
+            console.log(fastFoodArray.length);
+            ditto.style.width = ditto.clientWidth + 5 + "px"; // increase Ditto with
+            ditto.style.height = ditto.clientHeight + 5 + "px"; // increase Ditto Height
+        }
 
+}
 }
