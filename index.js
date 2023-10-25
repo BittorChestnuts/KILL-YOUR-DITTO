@@ -90,17 +90,18 @@ function createFastFood3() {
 
 // Launching the FastFood to DITTO in the GAMEBOARD
 function moveFastFood() {
-    fastFoodArray.forEach((food) => {
+    fastFoodArray.forEach((food,index) => {
         if (directionXFastFood1 === "right") {
             food.positionX -= food.speed;
-            if (food.positionX >= gameBoardWidth - food.element.clientWidth) {
+           /*  if (food.positionX >= 0) {
                 directionXFastFood1 = "left";
-            }
+            } */
         } else if (directionXFastFood1 === "left") {
             food.positionX += food.speed;
-            if (food.positionX <= 0) {
+        if (food.positionX >= gameBoardWidth - food.element.clientWidth) {
                 food.element.remove()
-                fastFoodPassed++
+                fastFoodArray.splice(index,1)
+                fastFoodPassed ++
             }
         }
         food.element.style.right = `${food.positionX}px`
