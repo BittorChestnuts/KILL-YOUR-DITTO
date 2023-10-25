@@ -28,51 +28,44 @@ class game {
 }
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
-let positionXDitto = 50;
+let positionXDitto = 20;
 let speedDitto = 40;
 let dittoHealth = 10;
 let fastFoodPassed = 0;
+let chooseYourName = "Marianito"
 
 
-//init the DITOHEALTH, SCORE and NAME in the HTML 
-
-    let dittoLife = document.createElement("game-info-banner")
-    dittoLife.classList.add("dittoLife")
-    gameInfoElement.appendChild(dittoLife)
-    dittoLife.textContent = `Ditto Health: ${dittoHealth}`
-    
-    let score = document.createElement("fastFoodPassed")
-    score.classList.add("dittoLife")
-    gameInfoElement.appendChild(score)
-    score.textContent = `Score: ${fastFoodPassed}`
+//init the NAME, DITOHEALTH and SCORE
+let dittoName = document.querySelector(".dittoName")
+//dittoName.classList.add("dittoName")
+//gameInfoElement.appendChild(dittoName)
+dittoName.textContent = `Name: ${chooseYourName}`
+let dittoLife = document.querySelector(".dittoLife")
+dittoLife.textContent = `Ditto Health: ${dittoHealth}`
+let score = document.querySelector(".score")
+score.textContent = `Score: ${fastFoodPassed}`
 
 //init fastFoodArray to save the fastFoodPassed and save the length as a SCORE game.
 const fastFoodArray = []
-
 //getting info and init FastFood 1
 const fastFood1 = document.querySelector(".fast-food-1");
 let speedFastFood1 = 4;
 let directionXFastFood1 = "left"
-
 //getting info and init FastFood 2
 const fastFood2 = document.querySelector(".fast-food-2");
 let speedFastFood2 = 50;
 let directionXFastFood2 = "left"
-
 //getting info and init FastFood 3
 const fastFood3 = document.querySelector(".fast-food-3");
 let speedFastFood3 = 6;
 let directionXFastFood3 = "left"
 
 
-
 // create the FastFood1
 function createFastFood1() {
     const newFastFood1Element = document.createElement("div");
     newFastFood1Element.classList.add("fast-food-1")
-
-    // generate random movement
-    const newFastFood1 = new FastFoodItem1(newFastFood1Element, 1, "down")
+    const newFastFood1 = new FastFoodItem1(newFastFood1Element, 2, "down")
     gameBoardElement.appendChild(newFastFood1Element)
     fastFoodArray.push(newFastFood1)
 }
@@ -81,7 +74,7 @@ function createFastFood1() {
 function createFastFood2() {
     const newFastFood2Element = document.createElement("div");
     newFastFood2Element.classList.add("fast-food-2")
-    const newFastFood2 = new FastFoodItem2(newFastFood2Element, 1, "down")
+    const newFastFood2 = new FastFoodItem2(newFastFood2Element, 4, "down")
     gameBoardElement.appendChild(newFastFood2Element)
     fastFoodArray.push(newFastFood2)
 }
@@ -90,27 +83,27 @@ function createFastFood2() {
 function createFastFood3() {
     const newFastFood3Element = document.createElement("div");
     newFastFood3Element.classList.add("fast-food-3")
-    const newFastFood3 = new FastFoodItem2(newFastFood3Element, 1, "down")
+    const newFastFood3 = new FastFoodItem2(newFastFood3Element, 4, "down")
     gameBoardElement.appendChild(newFastFood3Element)
     fastFoodArray.push(newFastFood3)
 }
 
 // Launching the FastFood to DITTO in the GAMEBOARD
 function moveFastFood() {
-    fastFoodArray.forEach((ditto) => {
+    fastFoodArray.forEach((food) => {
         if (directionXFastFood1 === "right") {
-            ditto.positionX -= ditto.speed;
-            if (ditto.positionX >= gameBoardWidth - ditto.element.clientWidth) {
+            food.positionX -= food.speed;
+            if (food.positionX >= gameBoardWidth - food.element.clientWidth) {
                 directionXFastFood1 = "left";
-                fastFoodPassed++
             }
         } else if (directionXFastFood1 === "left") {
-            ditto.positionX += speedFastFood1;
-            if (ditto.positionX <= 0) {
-                ditto.element.remove()
+            food.positionX += food.speed;
+            if (food.positionX <= 0) {
+                food.element.remove()
+                fastFoodPassed++
             }
         }
-        ditto.element.style.right = `${ditto.positionX}px`
+        food.element.style.right = `${food.positionX}px`
     })
 
 }
@@ -123,9 +116,9 @@ function gameAnimationFrame() {
     if (!this.gameIsOver) {
         moveFastFood();
         dittoIsEating();
-        frames = frames +2
+        frames = frames + 2
         animationId = requestAnimationFrame(gameAnimationFrame);
-        if (frames % 80 === 0) {
+        if (frames % 140 === 0) {
             createFastFood1()
         }
         else if (frames % 130 === 0) {
