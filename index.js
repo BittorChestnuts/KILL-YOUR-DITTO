@@ -2,153 +2,116 @@
 const gameBoardWidth = document.querySelector(".game-board").clientWidth;
 const gameBoardHeight = document.querySelector(".game-board").clientHeight;
 const gameBoardElement = document.querySelector(".game-board");
-
 // getting info Ditto
 const ditto = document.querySelector(".ditto");
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
-
 // INIT THE GAME 
 class game {
     constructor(dittoHealth, fastFoodPassed, gameIsOver) {
         this.dittoHealth = 10,
-        this.fastFoodPassed = 0,
-        this.gameOver = false           
+            this.fastFoodPassed = 0,
+            this.gameOver = false
+    }
+    newGame() {
+        return this.dittoHealth, this.fastFoodPassed
+    }
+    gameIsOver() {
+        console.log("GAME OVER");
+        return this.gameIsOver = true
+    }
 }
-newGame() {
-    return this.dittoHealth, this.fastFoodPassed
-}
-gameIsOver(){
-    return this.gameIsOver = true
-}
-}
-
-// init Ditto in the GAME
+// init Ditto in the GAMEBOARD
 let positionYDitto = 300;
 let positionXDitto = 50;
 let speedDitto = 40;
 let dittoHealth = 10;
-// how many fastFood passed outside the gameBoard 
 let fastFoodPassed = 0;
 
 
-// init the enemies (Fast Food)
+const fastFoodArray = []
 
-const fastFoodItem1 = new FastFoodItem1(".fast-food-1", 3, "down", "right");
-const fastFoodItem2 = new FastFoodItem2(".fast-food-2", 5, "down", "right");
-const fastFoodItem3 = new FastFoodItem3(".fast-food-3", 7, "down", "right");
+//getting info and init FastFood 1
+const fastFood1 = document.querySelector(".fast-food-1");
+let speedFastFood1 = 4;
+let directionXFastFood1 = "left"
+
+//getting info and init FastFood 2
+const fastFood2 = document.querySelector(".fast-food-2");
+let speedFastFood2 = 5;
+let directionXFastFood2 = "left"
+
+//getting info and init FastFood 3
+const fastFood3 = document.querySelector(".fast-food-3");
+let speedFastFood3 = 6;
+let directionXFastFood3 = "left"
 
 
-
-// controlling movement Ditto inside the GameBoard
-function moveDitto(event) {
-    if (event.key === "ArrowUp") {
-        if (positionYDitto - speedDitto >= 0) {
-            positionYDitto -= speedDitto;
-        }
-    } else if (event.key === "ArrowDown") {
-        if (positionYDitto + dittoHeight + speedDitto <= gameBoardHeight) {
-            positionYDitto += speedDitto;
-        }
-    } else if (event.key === "ArrowLeft") {
-        if (positionXDitto - speedDitto >= 0) {
-            positionXDitto -= speedDitto;
-        }
-    } else if (event.key === "ArrowRight") {
-        if (positionXDitto + dittoWidth + speedDitto <= gameBoardWidth) {
-            positionXDitto += speedDitto;
-        }
-    }
-    ditto.style.top = `${positionYDitto}px`;
-    ditto.style.left = `${positionXDitto}px`;
-
-    //check if ditto is eating
-    dittoIsEating();
+// create the FastFood1
+function createFastFood1() {
+    const newFastFood1Element = document.createElement("div");
+    newFastFood1Element.classList.add("fast-food-1")
+    const newFastFood1 = new FastFoodItem1(newFastFood1Element, 1, "down")
+    gameBoardElement.appendChild(newFastFood1Element)
+    fastFoodArray.push(newFastFood1)
 }
 
-// detecting Ditto movement
-document.addEventListener("keydown", moveDitto);
+// create the FastFood2
+function createFastFood2() {
+    const newFastFood2Element = document.createElement("div");
+    newFastFood2Element.classList.add("fast-food-2")
+    const newFastFood2 = new FastFoodItem2(newFastFood2Element, 1, "down")
+    gameBoardElement.appendChild(newFastFood2Element)
+    fastFoodArray.push(newFastFood2)
+}
 
-function dittoIsEating() {
-    // checking if DITTO is EATING FAST FOOD!
-    // if Ditto is eating : 
-    // 1- remove the FastFood Element from the GameBoard
-    // 2 - substract -1 dittoHealth
-    // 3 - increase the size of Ditto 10 px
-    // 4 - decrease the sppedDito - 5
+function createFastFood3() {
+    const newFastFood3Element = document.createElement("div");
+    newFastFood3Element.classList.add("fast-food-3")
+    const newFastFood3 = new FastFoodItem2(newFastFood3Element, 1, "down")
+    gameBoardElement.appendChild(newFastFood3Element)
+    fastFoodArray.push(newFastFood3)
+}
 
-    // getting position of Ditto & fastFood
-    
-    const dittoPosition = ditto.getBoundingClientRect();
-    const positionFastFood1 = fastFood1.getBoundingClientRect();
-    const positionFastFood2 = fastFood2.getBoundingClientRect();
-    const positionFastFood3 = fastFood3.getBoundingClientRect();
+// Move the FastFood in the GAMEBOARD
 
-    // Ditto is eating fastFood1
-    if (
-        dittoPosition.x < positionFastFood1.x + positionFastFood1.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood1.x &&
-        dittoPosition.y < positionFastFood1.y + positionFastFood1.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood1.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood1++
-        //ditto.style.width = (parseInt(ditto.style.width) + 10) + "px";
-        //ditto.style.height = (parseInt(ditto.style.height) + 10) + "px";
-        console.log('Ditto is Eating FastFood1');
-        console.log(speedDitto);
-        console.log(dittoHealth);
-        console.log(speedFastFood1);
-    }
-
-    // Ditto is eating fastFood2
-    else if (
-        dittoPosition.x < positionFastFood2.x + positionFastFood2.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood2.x &&
-        dittoPosition.y < positionFastFood2.y + positionFastFood2.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood2.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood2++
-        console.log('Ditto is Eating FastFood2');
-    }
-
-    // Ditto is eating fastFood3
-    else if (
-        dittoPosition.x < positionFastFood3.x + positionFastFood3.width &&
-        dittoPosition.x + dittoPosition.width > positionFastFood3.x &&
-        dittoPosition.y < positionFastFood3.y + positionFastFood3.height &&
-        dittoPosition.y + dittoPosition.height > positionFastFood3.y
-    ) {
-        speedDitto--
-        dittoHealth--
-        speedFastFood3++
-        console.log('Ditto is Eating FastFood3');
-    }
+function moveFastFood() {
+    fastFoodArray.forEach((ditto) => {
+        if (directionXFastFood1 === "right") {
+            ditto.positionX -= ditto.speed;
+            if (ditto.positionX >= gameBoardWidth - ditto.element.clientWidth) {
+                directionXFastFood1 = "left";
+            }
+        } else if (directionXFastFood1 === "left") {
+            ditto.positionX += speedFastFood1;
+            if (ditto.positionX <= 0) {
+                ditto.element.remove()
+            }
+        }
+        ditto.element.style.right = `${ditto.positionX}px`
+    })
 
 }
 
-function movingFastFood(){
-    const dittoPosition = ditto.getBoundingClientRect();
-    const positionFastFood1 = fastFood1.getBoundingClientRect();
-    const positionFastFood2 = fastFood2.getBoundingClientRect();
-    const positionFastFood3 = fastFood3.getBoundingClientRect();
-
-// moving FastFood1 
-
-
-
-
-
-
-
+// Creating the Game Animation Frame
+let animationId;
+let frames = 0
+function gameAnimationFrame() {
+    if (!this.gameIsOver) {
+        moveFastFood();
+        dittoIsEating();
+        frames++
+        animationId = requestAnimationFrame(gameAnimationFrame);
+        if (frames % 100 === 0) {
+            createFastFood1()
+        }
+        else if (frames % 150 === 0) {
+            createFastFood2()
+        }
+        else if (frames % 180 === 0) {
+            createFastFood3()
+        }
+    }
 }
+gameAnimationFrame();
 
-
-
-
-function gameOver() {
-    console.log("GAME OVER");
-}
