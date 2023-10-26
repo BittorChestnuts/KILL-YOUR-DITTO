@@ -156,6 +156,8 @@ function dittoWinTheGame() {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("dittoWinTheGame")
         gameIsOver.textContent = "YOU ARE IRONHACKER!"
+        musicGameStart.pause()
+        musicGameMiddle.pause()
         document.body.appendChild(gameIsOver)
         musicDittoWinTheGame.play();
         cancelAnimationFrame(animationId)
