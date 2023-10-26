@@ -1,5 +1,9 @@
 console.log("ditto.js is working!");
 
+// init the sounds during the game
+let musicDittoIsEatting = new Audio("sounds/dittoIsEatting.mp3")
+let musicGameMiddle = new Audio('sounds/gameMiddle.mp3')
+
 // controlling movement Ditto inside the GameBoard
 function moveDitto(event) {
     if (event.key === "ArrowUp") {
@@ -44,6 +48,7 @@ function dittoIsEating() {
             dittoPosition.y < positionFastFood.y + positionFastFood.height &&
             dittoPosition.y + dittoPosition.height > positionFastFood.y
         ) {
+            musicDittoIsEatting.play()
             speedDitto --;
             dittoHealth--;
             fastFoodArray.splice(i, 1); // Remove the fast food from the array

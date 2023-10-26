@@ -11,6 +11,7 @@ const ditto = document.querySelector(".ditto");
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
 
+
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
 

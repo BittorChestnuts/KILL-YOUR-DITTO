@@ -11,6 +11,13 @@ const ditto = document.querySelector(".ditto");
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
 
+// init the MUSIC GAME
+
+let musicGameStart = new Audio("sounds/gameStart.mp3")
+let musicGameOver = new Audio('sounds/gameOver.mp3')
+let musicDittoWinTheGame = new Audio('sounds/dittoWinTheGame.mp3')
+
+
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
 
@@ -18,7 +25,7 @@ let positionXDitto = 80;
 let speedDitto = 30;
 let dittoHealth = 10;
 let fastFoodPassed = 0;
-let chooseYourName = "Ditto"
+let chooseYourName = "IRONHACKER"
 
 
 //init the NAME, DITOHEALTH and SCORE
@@ -135,8 +142,9 @@ function GameOver() {
     if (dittoHealth === 0) {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("gameOver")
-        gameIsOver.textContent = "REPEAT THE BOOTCAMP!"
+        gameIsOver.textContent = "LOSER!"
         document.body.appendChild(gameIsOver)
+        musicGameOver.play()
         cancelAnimationFrame(animationId)
     }
 }
@@ -145,21 +153,22 @@ function dittoWinTheGame() {
     if (positionXDitto + dittoWidth >= gameBoardWidth){
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("dittoWinTheGame")
-        gameIsOver.textContent = "YOU ARE A REAL IRONHACKER!"
+        gameIsOver.textContent = "YOU ARE IRONHACKER!"
         document.body.appendChild(gameIsOver)
+        musicDittoWinTheGame.play();
         cancelAnimationFrame(animationId)
 
     }
-
-
-
 }
-
-
 
 // Creating the Game Animation Frame
 let animationId;
 function gameAnimationFrame() {
+    if (dittoHealth > 5){
+        musicGameStart.play()
+    }else if (dittoHealth <= 5){
+        musicGameMiddle.play()
+    }
     if (!this.gameIsOver) {
         moveFastFood();
         dittoIsEating();
