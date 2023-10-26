@@ -144,7 +144,9 @@ function GameOver() {
         gameIsOver.classList.add("gameOver")
         gameIsOver.textContent = "LOSER!"
         document.body.appendChild(gameIsOver)
+        musicGameStart.pause()
         musicGameOver.play()
+        musicGameMiddle.pause()
         cancelAnimationFrame(animationId)
     }
 }
