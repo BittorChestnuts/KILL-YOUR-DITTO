@@ -15,10 +15,10 @@ const dittoHeight = ditto.clientHeight;
 let positionYDitto = 300;
 
 let positionXDitto = 80;
-let speedDitto = 30;
+let speedDitto = 40;
 let dittoHealth = 10;
 let fastFoodPassed = 0;
-let chooseYourName = "Ditto"
+let chooseYourName = "Hommer Ditto"
 
 
 //init the NAME, DITOHEALTH and SCORE
@@ -135,7 +135,7 @@ function GameOver() {
     if (dittoHealth === 0) {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("gameOver")
-        gameIsOver.textContent = "LOSER"
+        gameIsOver.textContent = "YOU DIED!"
         document.body.appendChild(gameIsOver)
         cancelAnimationFrame(animationId)
     }
@@ -145,7 +145,7 @@ function dittoWinTheGame() {
     if (positionXDitto + dittoWidth >= gameBoardWidth){
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("dittoWinTheGame")
-        gameIsOver.textContent = "YOU ARE A REAL IRONHACKER!"
+        gameIsOver.textContent = "DITTO STILL ALIVES!"
         document.body.appendChild(gameIsOver)
         cancelAnimationFrame(animationId)
 
@@ -155,23 +155,21 @@ function dittoWinTheGame() {
 
 }
 
-
-
 // Creating the Game Animation Frame
 let animationId;
 function gameAnimationFrame() {
     if (!this.gameIsOver) {
         moveFastFood();
         dittoIsEating();
-        frames = frames + 2
+        frames = frames + 3
         animationId = requestAnimationFrame(gameAnimationFrame);
-        if (frames % 140 === 0) {
+        if (frames % 100 === 0) {
             createFastFood1()
         }
         else if (frames % 130 === 0) {
             createFastFood2()
         }
-        else if (frames % 100 === 0) {
+        else if (frames % 90 === 0) {
             createFastFood3()
         }
         dittoWinTheGame();

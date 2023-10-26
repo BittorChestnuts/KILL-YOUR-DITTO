@@ -19,15 +19,15 @@ body {
     width: 80vw;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #c189cd; /* Azul brillante */
+    background-color: #f0f0f0; /* Azul brillante */
     justify-content: space-between;
-    border-end-end-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    /* border-end-end-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Sombra suave */
 }
 
 .game-board {
     position: relative;
-    background-color: #333; /* Fondo gris oscuro */
+    background-color: #f0f0f0; /* Fondo gris oscuro */
     width: 80vw;
     height: 80vh;
     overflow: hidden;
@@ -37,8 +37,8 @@ body {
 
 .ditto {
     position: absolute;
-    width: 100px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: #e74c3c; /* Rojo */
     left: 30px;
     top: 400px;
@@ -84,18 +84,7 @@ body {
     background-size: cover;
 }
 
-.objective {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Forma circular */
-    background-color: #cc2e2e; /* Verde brillante */
-    right: 10px;
-    bottom: 350px;;
-    transition: all 0.2s ease;
-    background: url("/img/objectives/teacher.png");
-    background-size: cover;
-}
+
 
 .score,
 .dittoLife,
@@ -108,7 +97,7 @@ body {
 }
 
 .gameOver {
-    font-size: 350px;
+    font-size: 300px;
     font-weight: bold;
     color: #333; /* Texto gris oscuro */
     text-align: center;

@@ -135,7 +135,7 @@ function GameOver() {
     if (dittoHealth === 0) {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("gameOver")
-        gameIsOver.textContent = "LOSER"
+        gameIsOver.textContent = "REPEAT THE BOOTCAMP!"
         document.body.appendChild(gameIsOver)
         cancelAnimationFrame(animationId)
     }

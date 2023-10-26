@@ -31,8 +31,8 @@ document.addEventListener("keydown", moveDitto);
 // Check the COLLISIONS
 function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
-    document.querySelector(".dittoLife").textContent = `Motivation: ${dittoHealth}`
-    document.querySelector(".score").textContent = `Frustation: ${fastFoodPassed}`
+    document.querySelector(".dittoLife").textContent = `Ditto Health: ${dittoHealth}`
+    document.querySelector(".score").textContent = `Fast Food Passed: ${fastFoodPassed}`
     document.querySelector(".dittoName").textContent = `Hello, ${chooseYourName}`
     for (let i = 0; i < fastFoodArray.length; i++) {
         const fastFood = fastFoodArray[i];
@@ -48,8 +48,8 @@ function dittoIsEating() {
             dittoHealth--;
             fastFoodArray.splice(i, 1); // Remove the fast food from the array
             fastFood.element.remove() // Remove from the screen the fastFood
-            ditto.style.width = ditto.clientWidth + 15 + "px"; // increase Ditto width
-            ditto.style.height = ditto.clientHeight + 15 + "px"; // increase Ditto Height
+            ditto.style.width = ditto.clientWidth + 10 + "px"; // increase Ditto width
+            ditto.style.height = ditto.clientHeight + 10 + "px"; // increase Ditto Height
         }
 }
 }

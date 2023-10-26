@@ -37,26 +37,26 @@ body {
 
 .ditto {
     position: absolute;
-    width: 100px;
-    height: 80px;
+    width: 150px;
+    height: 150px;
     background-color: #e74c3c; /* Rojo */
     left: 30px;
     top: 400px;
     transition: all 0.3s ease; /* Efecto de transición suave */
-    background: url("/img/player/brain.webp");
+    background: url("/img/player/ditto2.webp");
     background-size: cover;
     
 }
 
 .fast-food-1{
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%; /* Forma circular */
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("/img/webdevitems/html.png");
+    background: url("/img/fooditems/beer.webp");
     background-size: cover;
 }
 
@@ -68,32 +68,32 @@ body {
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("/img/webdevitems/css.png");
+    background: url("/img/fooditems/burguer.gif");
     background-size: cover;
 }
 
 .fast-food-3 {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%; /* Forma circular */
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("/img/webdevitems/javascript.png");
+    background: url("/img/fooditems/fries.webp");
     background-size: cover;
 }
 
 .objective {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Forma circular */
+    width: 200px;
+    height: 300px;
+    /* border-radius: 50%; Forma circular */
     background-color: #cc2e2e; /* Verde brillante */
-    right: 10px;
-    bottom: 350px;;
+    right: 5px;
+    bottom: 280px;;
     transition: all 0.2s ease;
-    background: url("/img/objectives/teacher.png");
+    background: url("/img/objectives/doctor.webp");
     background-size: cover;
 }
 
@@ -113,7 +113,7 @@ body {
     color: #333; /* Texto gris oscuro */
     text-align: center;
     margin-top: 100px;
-    /*background: url("/img/hey-loser-mr-bean.gif ") no-repeat center center;*/
+    background: url("/img/died.gif") no-repeat center center;*/
     
 }
 
