@@ -168,6 +168,7 @@ function gameAnimationFrame() {
         musicGameStart.play()
     }else if (dittoHealth <= 5){
         musicGameMiddle.play()
+        musicGameStart.pause()
     }
     if (!this.gameIsOver) {
         moveFastFood();
