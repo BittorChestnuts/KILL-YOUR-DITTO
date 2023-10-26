@@ -13,11 +13,12 @@ const dittoHeight = ditto.clientHeight;
 
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
+
 let positionXDitto = 80;
-let speedDitto = 40;
+let speedDitto = 30;
 let dittoHealth = 10;
 let fastFoodPassed = 0;
-let chooseYourName = "MareaDITTO"
+let chooseYourName = "Ditto"
 
 
 //init the NAME, DITOHEALTH and SCORE
@@ -54,6 +55,11 @@ const fastFood3 = document.querySelector(".fast-food-3");
 let speedFastFood3 = 3;
 let directionYFastFood3 = getRandomDirection()
 
+//getting info and init FastFood 3
+const objective = document.querySelector(".objective");
+let speedObjective = 3;
+let directionYObjective = getRandomDirection()
+
 // create the FastFood1
 function createFastFood1() {
     const newFastFood1Element = document.createElement("div");
@@ -81,53 +87,67 @@ function createFastFood3() {
     fastFoodArray.push(newFastFood3)
 }
 
+
+
 // Launching the FastFood to DITTO in the GAMEBOARD
 let frames = 0
 function moveFastFood() {
     fastFoodArray.forEach((food, index) => {
         if (directionX === "left") {
             food.positionX += food.speed;
-           
-          //food.directionY = getRandomDirection()
-           
+
+            //food.directionY = getRandomDirection()
+
             if (food.positionX >= gameBoardWidth - food.element.clientWidth) {
                 food.element.remove()
                 fastFoodArray.splice(index, 1)
                 fastFoodPassed++
             }
         }
-        if (food.directionY === "up"){
+        if (food.directionY === "up") {
             food.positionY += 1
-//          food.positionY = getRandomDirection()
+            //          food.positionY = getRandomDirection()
         }
-        else{
-         food.positionY -= food.speed    -2
+        else {
+            food.positionY -= food.speed - 2
         }
 
         if (frames % 140 === 0) {
             food.directionY = getRandomDirection()
         }
 
-    
-
-
 
         food.element.style.right = `${food.positionX}px`
         food.element.style.top = `${food.positionY}px`
-        
-        
+
+
     })
 }
 
-function GameOver(){
-        if (dittoHealth === 0){
-                       const gameIsOver = document.createElement("h1")
-                       gameIsOver.classList.add("gameOver")
-                       gameIsOver.textContent = "GAME OVER!"
-                       document.body.appendChild(gameIsOver)
-                       cancelAnimationFrame(animationId)
-                   } 
+function GameOver() {
+    if (dittoHealth === 0) {
+        const gameIsOver = document.createElement("div")
+        gameIsOver.classList.add("gameOver")
+        gameIsOver.textContent = "LOSER"
+        document.body.appendChild(gameIsOver)
+        cancelAnimationFrame(animationId)
     }
+}
+function dittoWinTheGame() {
+    const dittoPosition = ditto.getBoundingClientRect();
+    if (positionXDitto + dittoWidth >= gameBoardWidth){
+        const gameIsOver = document.createElement("div")
+        gameIsOver.classList.add("dittoWinTheGame")
+        gameIsOver.textContent = "YOU ARE A REAL IRONHACKER!"
+        document.body.appendChild(gameIsOver)
+        cancelAnimationFrame(animationId)
+
+    }
+
+
+
+}
+
 
 
 // Creating the Game Animation Frame
@@ -147,6 +167,7 @@ function gameAnimationFrame() {
         else if (frames % 100 === 0) {
             createFastFood3()
         }
+        dittoWinTheGame();
         GameOver()
     }
 }

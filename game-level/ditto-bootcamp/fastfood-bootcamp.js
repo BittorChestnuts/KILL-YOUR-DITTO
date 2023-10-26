@@ -35,7 +35,17 @@ class FastFoodItem3 {
     }
 }
 
-
+class ObjectiveItem {
+    constructor(element) {
+        this.element = element;
+        this.speed = speedObjective;
+        this.directionY = getRandomDirection()
+        this.directionX = "left";
+        this.positionX = -50;
+        this.positionY = 300;
+        // this.foodimage = foodimage;
+    }
+}
 
 
 

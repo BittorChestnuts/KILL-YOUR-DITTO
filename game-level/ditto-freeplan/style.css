@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    font-family: 'Arial', sans-serif; 
+}
+
+.game-info-banner {
+    display: flex;
+    width: 80vw;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #c189cd; /* Azul brillante */
+    justify-content: space-between;
+    border-end-end-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.game-board {
+    position: relative;
+    background-color: #333; /* Fondo gris oscuro */
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
+    border: 2px solid #ccc; /* Borde gris claro */
+    border-radius: 15px; /* Esquinas ligeramente redondeadas */
+}
+
+.ditto {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background-color: #e74c3c; /* Rojo */
+    left: 30px;
+    top: 400px;
+    /*transition: all 0.3s ease; /* Efecto de transición suave */
+    /*background: url("/img/player/brain.webp");*/
+    background-size: cover;
+    
+}
+
+.fast-food-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    background-color: #2ecc71; /* Verde brillante */
+    right: -50px;
+    /*transition: all 0.2s ease;
+    background: url("/img/webdevitems/html.png");*/
+    background-size: cover;
+}
+
+.fast-food-2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    background-color: #2ecc71; /* Verde brillante */
+    right: -50px;
+    /*transition: all 0.2s ease;
+    background: url("/img/webdevitems/css.png");*/
+    background-size: cover;
+}
+
+.fast-food-3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Forma circular */
+    background-color: #2ecc71; /* Verde brillante */
+    right: -50px;
+    /*transition: all 0.2s ease;
+    background: url("/img/webdevitems/javascript.png");*/
+    background-size: cover;
+}
+
+.objective {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Forma circular */
+    background-color: #cc2e2e; /* Verde brillante */
+    right: 10px;
+    bottom: 350px;;
+    transition: all 0.2s ease;
+    background: url("/img/objectives/teacher.png");
+    background-size: cover;
+}
+
+.score,
+.dittoLife,
+.dittoName {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Texto gris oscuro */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.gameOver {
+    font-size: 350px;
+    font-weight: bold;
+    color: #333; /* Texto gris oscuro */
+    text-align: center;
+    margin-top: 100px;
+    /*background: url("/img/hey-loser-mr-bean.gif ") no-repeat center center;*/
+    
+}
+
+.dittoWinTheGame {
+    font-size: 150px;
+    font-weight: bold;
+    color: #333; /* Texto gris oscuro */
+    text-align: center;
+    margin-top: 100px;
+    /*background: url("/img/hey-loser-mr-bean.gif ") no-repeat center center;*/
+    
+}
+
+
+
