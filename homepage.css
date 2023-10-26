@@ -10,31 +10,31 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Fondo gris claro */
+  background-color: #f0f0f0; 
   font-family: 'Arial', sans-serif; 
 }
 
 .game-board {
   position: relative;
-  background-color: #333; /* Fondo gris oscuro */
+  background-color: #333; 
   width: 80vw;
   height: 80vh;
   overflow: hidden;
-  border: 2px solid #ccc; /* Borde gris claro */
-  border-radius: 15px; /* Esquinas ligeramente redondeadas */
+  border: 2px solid #ccc;
+  border-radius: 15px;
   background-image: url("/img/background.png");
   background-repeat: no-repeat;
-  background-size: cover; /* Hace que la imagen de fondo cubra todo el .game-board */
+  background-size: cover; 
 }
 
 
-/* Estilos para los botones */
+
 .game-board button {
   width: 200px;
   height: 40px;
   border: none;
   border-radius: 5px;
-  color: #fff; /* Color de texto blanco */
+  color: #fff; 
   font-size: 16px;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.3s;
@@ -43,27 +43,27 @@ body {
 }
 
 .game-board button:hover {
-  background-color: #0056B3; /* Color de fondo azul más oscuro al pasar el cursor sobre el botón */
-  transform: scale(1.1); /* Escala el botón al 110% del tamaño original */
+  background-color: #0056B3;
+  transform: scale(1.1); 
 }
 
 .free-plan {
   position: absolute;
-  background-color: #8b22e6; /* Color de fondo naranja para el botón free-plan */
+  background-color: #8b22e6; 
   top: 575px;
   left: 110px;
 }
 
 .ditto-food {
   position: absolute;
-  background-color: #e66842; /* Color de fondo verde para el botón ditto-food */
+  background-color: #e66842; 
   top: 575px;
   left: 420px;
 }
 
 .ditto-bootcamp {
   position: absolute;
-  background-color: #f0a431; /* Color de fondo rojo para el botón ditto-bootcamp */
+  background-color: #f0a431; 
   top: 575px;
   left: 720px;
 }
