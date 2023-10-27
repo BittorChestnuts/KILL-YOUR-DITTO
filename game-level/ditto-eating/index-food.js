@@ -160,11 +160,8 @@ function dittoWinTheGame() {
         cancelAnimationFrame(animationId)
 
     }
-
-
-
+    
 }
-
 // Creating the Game Animation Frame
 let animationId;
 function gameAnimationFrame() {

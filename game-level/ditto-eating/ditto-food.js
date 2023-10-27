@@ -1,5 +1,9 @@
 console.log("ditto.js is working!");
 
+//init the sounds during the game
+
+let musicDittoIsEatting = new Audio("./sounds/dittoIsEatting.mp3")
+
 // controlling movement Ditto inside the GameBoard
 function moveDitto(event) {
     if (event.key === "ArrowUp") {
@@ -31,8 +35,8 @@ document.addEventListener("keydown", moveDitto);
 // Check the COLLISIONS
 function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
-    document.querySelector(".dittoLife").textContent = `You have ${dittoHealth} years`
-    document.querySelector(".score").textContent = `Fast Food Passed: ${fastFoodPassed}`
+    document.querySelector(".dittoLife").textContent = `You'll die in ${dittoHealth} years`
+    document.querySelector(".score").textContent = `${fastFoodPassed} FastFood Skipped `
     document.querySelector(".dittoName").textContent = `Hello, ${chooseYourName}`
     for (let i = 0; i < fastFoodArray.length; i++) {
         const fastFood = fastFoodArray[i];
@@ -44,12 +48,13 @@ function dittoIsEating() {
             dittoPosition.y < positionFastFood.y + positionFastFood.height &&
             dittoPosition.y + dittoPosition.height > positionFastFood.y
         ) {
+            musicDittoIsEatting.play()
             speedDitto = speedDitto - 3;
             dittoHealth--;
             fastFoodArray.splice(i, 1); // Remove the fast food from the array
             fastFood.element.remove() // Remove from the screen the fastFood
-            ditto.style.width = ditto.clientWidth + 10 + "px"; // increase Ditto width
-            ditto.style.height = ditto.clientHeight + 10 + "px"; // increase Ditto Height
+            ditto.style.width = ditto.clientWidth + 7 + "px"; // increase Ditto width
+            ditto.style.height = ditto.clientHeight + 7 + "px"; // increase Ditto Height
         }
 }
 }
