@@ -1,8 +1,8 @@
 console.log("ditto.js is working!");
 
 // init the sounds during the game
-let musicDittoIsEatting = new Audio("sounds/dittoIsEatting.mp3")
-let musicGameMiddle = new Audio('sounds/gameMiddle.mp3')
+let musicDittoIsEatting = new Audio("./sounds/dittoIsEatting.mp3")
+let musicGameMiddle = new Audio('./sounds/gameMiddle.mp3')
 
 // controlling movement Ditto inside the GameBoard
 function moveDitto(event) {

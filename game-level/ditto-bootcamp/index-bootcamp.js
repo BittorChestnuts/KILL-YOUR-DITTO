@@ -13,9 +13,9 @@ const dittoHeight = ditto.clientHeight;
 
 // init the MUSIC GAME
 
-let musicGameStart = new Audio("sounds/gameStart.mp3")
-let musicGameOver = new Audio('sounds/gameOver.mp3')
-let musicDittoWinTheGame = new Audio('sounds/dittoWinTheGame.mp3')
+let musicGameStart = new Audio("./sounds/gameStart.mp3")
+let musicGameOver = new Audio('./sounds/gameOver.mp3')
+let musicDittoWinTheGame = new Audio('./sounds/dittoWinTheGame.mp3')
 
 
 // init Ditto in the GAMEBOARD
