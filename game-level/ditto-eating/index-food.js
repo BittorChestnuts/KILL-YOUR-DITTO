@@ -11,13 +11,18 @@ const ditto = document.querySelector(".ditto");
 const dittoWidth = ditto.clientWidth;
 const dittoHeight = ditto.clientHeight;
 
+// init the MUSIC GAME
+
+let musicGameStart = new Audio("sounds/gameStart.mp3")
+let musicGameOver = new Audio('sounds/gameOver.mp3')
+let musicDittoWinTheGame = new Audio('sounds/dittoWinTheGame.mp3')
 
 // init Ditto in the GAMEBOARD
 let positionYDitto = 300;
 
 let positionXDitto = 80;
-let speedDitto = 40;
-let dittoHealth = 10;
+let speedDitto = 70;
+let dittoHealth = 20;
 let fastFoodPassed = 0;
 let chooseYourName = "Hommer Ditto"
 
@@ -26,7 +31,7 @@ let chooseYourName = "Hommer Ditto"
 let dittoName = document.querySelector(".dittoName")
 dittoName.textContent = `Name: ${chooseYourName}`
 let dittoLife = document.querySelector(".dittoLife")
-dittoLife.textContent = `Ditto Health: ${dittoHealth}`
+dittoLife.textContent = `Ditto Healthh: ${dittoHealth}`
 let score = document.querySelector(".score")
 score.textContent = `Score: ${fastFoodPassed}`
 
@@ -38,6 +43,7 @@ function getRandomDirection() {
     const randomIndex = Math.floor(Math.random() * possibleDirections.length);
     return possibleDirections[randomIndex]
 }
+
 
 //getting info and init FastFood 1
 const fastFood1 = document.querySelector(".fast-food-1");
@@ -137,6 +143,8 @@ function GameOver() {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("gameOver")
         gameIsOver.textContent = "YOU DIED!"
+        musicGameStart.pause()
+        musicGameOver.play()
         document.body.appendChild(gameIsOver)
         cancelAnimationFrame(animationId)
     }
@@ -147,6 +155,7 @@ function dittoWinTheGame() {
         const gameIsOver = document.createElement("div")
         gameIsOver.classList.add("dittoWinTheGame")
         gameIsOver.textContent = "DITTO STILL ALIVES!"
+        musicGameStart.pause()
         document.body.appendChild(gameIsOver)
         cancelAnimationFrame(animationId)
 
@@ -160,9 +169,10 @@ function dittoWinTheGame() {
 let animationId;
 function gameAnimationFrame() {
     if (!this.gameIsOver) {
+        musicGameStart.play()
         moveFastFood();
         dittoIsEating();
-        frames = frames + 3
+        frames = frames + 2
         animationId = requestAnimationFrame(gameAnimationFrame);
         if (frames % 100 === 0) {
             createFastFood1()

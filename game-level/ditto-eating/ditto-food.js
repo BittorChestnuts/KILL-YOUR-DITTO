@@ -31,7 +31,7 @@ document.addEventListener("keydown", moveDitto);
 // Check the COLLISIONS
 function dittoIsEating() {
     const dittoPosition = ditto.getBoundingClientRect();
-    document.querySelector(".dittoLife").textContent = `Ditto Health: ${dittoHealth}`
+    document.querySelector(".dittoLife").textContent = `You have ${dittoHealth} years`
     document.querySelector(".score").textContent = `Fast Food Passed: ${fastFoodPassed}`
     document.querySelector(".dittoName").textContent = `Hello, ${chooseYourName}`
     for (let i = 0; i < fastFoodArray.length; i++) {
@@ -44,7 +44,7 @@ function dittoIsEating() {
             dittoPosition.y < positionFastFood.y + positionFastFood.height &&
             dittoPosition.y + dittoPosition.height > positionFastFood.y
         ) {
-            speedDitto --;
+            speedDitto = speedDitto - 3;
             dittoHealth--;
             fastFoodArray.splice(i, 1); // Remove the fast food from the array
             fastFood.element.remove() // Remove from the screen the fastFood
