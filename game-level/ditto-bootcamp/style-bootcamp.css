@@ -43,7 +43,7 @@ body {
     left: 30px;
     top: 400px;
     transition: all 0.3s ease; /* Efecto de transición suave */
-    background: url("./img/player/brain.webp");
+    background: url("../../img/player/brain.webp");
     background-size: cover;
     
 }
@@ -56,7 +56,7 @@ body {
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("./img/webdevitems/html.png");
+    background: url("../../img/webdevitems/html.png");
     background-size: cover;
 }
 
@@ -68,7 +68,7 @@ body {
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("./img/webdevitems/css.png");
+    background: url("../../img/webdevitems/css.png");
     background-size: cover;
 }
 
@@ -80,7 +80,7 @@ body {
     background-color: #2ecc71; /* Verde brillante */
     right: -50px;
     transition: all 0.2s ease;
-    background: url("./img/webdevitems/javascript.png");
+    background: url("../../img/webdevitems/javascript.png");
     background-size: cover;
 }
 
@@ -93,7 +93,7 @@ body {
     right: 10px;
     bottom: 350px;;
     transition: all 0.2s ease;
-    background: url("./img/objectives/teacher.png");
+    background: url("../../img/objectives/teacher.png");
     background-size: cover;
 }
 
@@ -113,7 +113,7 @@ body {
     color: #333; /* Texto gris oscuro */
     text-align: center;
     margin-top: 100px;
-    background: url("./img/repeatthebootcamp.webp") no-repeat center center;
+    background: url("../../img/repeatthebootcamp.webp") no-repeat center center;
     background-size: 35%;
     
 }
