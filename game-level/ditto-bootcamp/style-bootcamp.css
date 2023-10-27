@@ -113,7 +113,7 @@ body {
     color: #333; /* Texto gris oscuro */
     text-align: center;
     margin-top: 100px;
-    background: url("/img/repeatthebootcamp.webp") no-repeat center center;
+    background: url("./img/repeatthebootcamp.webp") no-repeat center center;
     background-size: 35%;
     
 }
@@ -124,7 +124,7 @@ body {
     color: #333; /* Texto gris oscuro */
     text-align: center;
     margin-top: 100px;
-    /*background: url("/img/youareironhacker.webp") no-repeat center center;*/
+    /*background: url("./img/youareironhacker.webp") no-repeat center center;*/
     background-size: 10%;
     
 }
