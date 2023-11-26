@@ -18,8 +18,7 @@ Depending the game choosen, Ditto could be a simple ball, Hommer Simpson trying 
 Can you help Ditto to survive on this world?
 
 #### PLAY THE GAME HERE: 
-(Only works in desktop and requires keyboard to move Ditto with arrows)
-https://bittorchestnuts.github.io/SAVE-YOUR-DITTO/
+https://bittorchestnuts.github.io/SAVE-YOUR-DITTO/  - (Only works in desktop and requires keyboard to move Ditto with arrows)
 
 
 ### THE FINAL MVP V.1
