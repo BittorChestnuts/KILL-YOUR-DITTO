@@ -27,3 +27,8 @@ Can you help Ditto to survive on this world?
 #### GAME SLIDES PRESENTATION V.1 : 
 
 https://www.canva.com/design/DAFxvN8-xm4/88a7OImoqZ8wftyiAL3ZyA/edit?utm_content=DAFxvN8-xm4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+
+#### PLAY THE GAME HERE: 
+https://bittorchestnuts.github.io/SAVE-YOUR-DITTO/
+(Only works in desktop and requires keyboard to move Ditto with arrows)
